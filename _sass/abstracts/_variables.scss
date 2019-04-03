@@ -1,0 +1,39 @@
+// Media breakpoints
+/*
+$xs-screen: 480px;
+$sm-screen: 600px;
+$md-screen: 1025px;
+$lg-screen: 1600px;
+$xl-screen: 1280px; */
+$xxl-screen: 1800px;
+
+//$red: #ff835e;
+
+$black1: #231f20;
+$black2: #242424;
+$gray: #58595b;
+
+//$red2: #ef4136;
+$red2: #e7886a;
+$red: #eb3700;
+$green: #76c494;
+$pink: #ee60a3;
+$yellow: #fced80;
+
+$blue: #eaf0f4;
+
+$border: 7rem;
+$border-palm: 7vw;
+$content-width-palm: calc(100vw - (#{$border-palm} * 2));
+$content-width: calc(100vw - (#{$border} * 2));
+$spacer-xs: 2rem;
+$spacer: 5rem;
+$spacer-md: 8rem;
+
+$futura: "Futura PT", "Futura", "Avenir", sans-serif;
+$dejavu: "DejaVu Sans Mono", monospace;
+
+$diagonal-ratio: 3.3379;
+$diagonal-height: calc(#{$content-width / $diagonal-ratio});
+
+$diagonal-height-palm: calc(#{$content-width-palm / $diagonal-ratio});

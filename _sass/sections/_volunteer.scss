@@ -1,0 +1,115 @@
+#volunteer-block {
+  //@extend .block;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: $blue;
+  padding-top: $diagonal-height;
+  background-image: url("../images/home/registration/stretch-diagonal.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  margin-bottom: -0.1rem;
+  @include grid-media-query(portable) {
+    padding-top: $diagonal-height-palm;
+    margin-bottom: -0.05rem;
+  }
+  h1 {
+    margin-right: -1rem;
+  }
+
+  .slashes {
+    top: calc(#{$diagonal-height} - 8rem);
+  }
+
+  .sidebar {
+    right: 0;
+    $angle: 2.8rem;
+    $angleComplement: calc(100% - #{$angle});
+    height: calc(105% - #{$diagonal-height});
+    clip-path: polygon(0 $angle, 100% 0%, 100% $angleComplement, 0% 100%);
+    bottom: calc(#{$diagonal-height-palm} - 3rem);
+    @include grid-media-query(palm) {
+      $angle: 1rem;
+      $angle-complement: calc(100% - #{$angle});
+      height: calc(103% - #{$diagonal-height-palm});
+      clip-path: polygon(0 $angle, 100% 0%, 100% $angle-complement, 0% 100%);
+      bottom: calc(#{$diagonal-height-palm} - 1.2rem);
+    }
+    @include grid-media-query(lap) {
+      $angle: 2vw;
+      $angle-complement: calc(100% - #{$angle});
+      clip-path: polygon(0 $angle, 100% 0%, 100% $angle-complement, 0% 100%);
+      height: calc(104% - #{$diagonal-height-palm});
+      bottom: calc(#{$diagonal-height-palm} - 2.2rem);
+    }
+  }
+  .flamingo {
+    max-width: 100%;
+    height: auto;
+    mix-blend-mode: multiply;
+  }
+}
+
+#volunteer {
+  padding: 5% 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: $diagonal-height;
+  @include grid-media-query(portable) {
+    margin-bottom: $diagonal-height-palm;
+  }
+  h1 {
+    margin-bottom: -$spacer;
+    @include grid-media-query(portable) {
+      margin-bottom: 0;
+    }
+  }
+  p {
+    max-width: 65%;
+    @include grid-media-query(lap-up) {
+      max-width: 60%;
+    }
+  }
+
+  .flamingo-container {
+    position: relative;
+    .leaf {
+      position: absolute;
+      width: 40%;
+      width: 20vw;
+      mix-blend-mode: multiply;
+      z-index: 999;
+    }
+    .leaf-top {
+      top: -10vw;
+      right: -10vw;
+    }
+    .leaf-bottom {
+      bottom: -14vw;
+      left: -10vw;
+    }
+    @include grid-media-query(portable) {
+      .leaf-top {
+        right: -5vw;
+      }
+      .leaf-bottom {
+        bottom: -13vw;
+        left: -5vw;
+      }
+    }
+    @include grid-media-query(palm) {
+      .leaf-top {
+        top: -9vw;
+      }
+      .leaf-bottom {
+        bottom: -10.5vw;
+      }
+    }
+  }
+}

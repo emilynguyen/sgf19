@@ -1,0 +1,133 @@
+html,
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+#content {
+  margin-left: auto;
+  margin-right: auto;
+  width: $content-width;
+  margin-bottom: $border;
+  transition: transform 0.3s;
+  @include grid-media-query(portable) {
+    width: $content-width-palm;
+    margin-bottom: $border-palm;
+    //margin-top: $border-palm;
+  }
+}
+
+.block {
+  height: 100vh;
+  min-height: 80rem;
+}
+
+.content {
+  //width: 65%;
+  width: 60vw;
+  @include grid-media-query(portable) {
+    // width: 80%;
+    width: 70vw;
+  }
+}
+
+#tip-container {
+  position: fixed;
+  z-index: 9999;
+  bottom: 2.5rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  display: none;
+  @include grid-media-query(palm) {
+    bottom: 1.5rem;
+  }
+}
+
+#tips {
+  //font-family: $dejavu;
+  font-family: $futura;
+  letter-spacing: 0.02rem;
+  line-height: 130%;
+  color: $red2;
+  font-size: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1rem;
+  width: 55vw;
+  max-width: 70rem;
+  padding: 0.8rem 1rem 0.7rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  a {
+    text-decoration: underline;
+  }
+  @include grid-media-query(palm) {
+    padding: 0.8rem 1rem 0.7rem;
+    font-size: 60%;
+    letter-spacing: 0.05rem;
+    width: 75%;
+  }
+}
+
+.slashes {
+  position: absolute;
+  width: calc(#{$border} * 0.85);
+  &-right {
+    right: calc(#{-$border} - 0.5rem);
+  }
+  &-left {
+    left: calc(#{-$border} - 0.5rem);
+  }
+  @include grid-media-query(portable) {
+    width: calc(#{$border-palm} * 0.85);
+    &-right {
+      right: calc(#{-$border-palm} - 0.5rem);
+    }
+    &-left {
+      left: calc(#{-$border-palm} - 0.5rem);
+    }
+  }
+}
+
+.sidebar {
+  background-color: $black2;
+  position: absolute;
+  z-index: 999;
+  width: calc(#{$border} * 1.2);
+  @include grid-media-query(portable) {
+    width: calc(#{$border-palm} * 0.8);
+  }
+}
+
+.white-triangle {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  &-up {
+    &::before {
+      bottom: 0;
+      left: 0;
+      border-color: transparent transparent white transparent;
+      border-width: 0 0 $diagonal-height $content-width;
+      @include grid-media-query(portable) {
+        border-width: 0 0 $diagonal-height-palm $content-width-palm;
+      }
+    }
+  }
+  &-down {
+    &::before {
+      top: 0;
+      left: 0;
+      border-color: white transparent transparent transparent;
+
+      border-width: $diagonal-height $content-width 0 0;
+      @include grid-media-query(portable) {
+        border-width: $diagonal-height-palm $content-width-palm 0 0;
+      }
+    }
+  }
+}

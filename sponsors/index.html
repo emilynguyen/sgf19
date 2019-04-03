@@ -1,0 +1,33 @@
+---
+layout: sub
+title: Sponsors
+permalink: /sponsors/
+---
+
+<div class="grid">
+  <div class="grid__item">
+    <h1 class="underline-dark">Sponsors</h1>
+  </div>
+  <div class="grid__item">
+    <div class="grid">
+      {% for sponsor in site.data.sponsors %}
+      <div class="grid__item desk--one-third lap--one-half">
+        <div class="sponsor">
+          <div class="sponsor-content">
+            <a href="{{ sponsor.link }}" target="_blank">
+              {% if sponsor.img %}
+              <img
+                src="assets/images/sponsors/{{ sponsor.img }}"
+                alt="{{ sponsor.name }}"
+              />
+              {% else %}
+              <h2>{{ sponsor.name }}</h2>
+              {% endif %}
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

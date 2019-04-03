@@ -1,0 +1,215 @@
+header {
+  font-family: $futura;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  line-height: 100%;
+  color: $gray;
+  height: $border-palm;
+  position: relative;
+  @include grid-media-query(desk) {
+    height: $border;
+  }
+  .btn {
+    font-size: 70%;
+    margin-left: 1.8rem;
+  }
+  @include grid-media-query(lap) {
+    .btn {
+      margin-left: -0.7rem;
+    }
+  }
+}
+
+#sgf-logo-container {
+  display: flex;
+  align-items: center;
+  height: $border;
+}
+
+#sgf-logo {
+  height: 40%;
+  margin-top: 0.5rem;
+  position: relative;
+  img {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .sgf-logo-blur {
+    opacity: 0;
+  }
+  .sgf-logo-blur {
+    transition: opacity 0.4s;
+  }
+  @include hover {
+    filter: initial;
+    opacity: initial;
+    .sgf-logo-blur {
+      opacity: 1;
+    }
+  }
+}
+
+$gap: 4rem;
+$gap-palm: 1.7rem;
+$gap-portable: 2.5rem;
+
+header nav {
+  white-space: nowrap;
+  text-align: center;
+  z-index: 9999;
+  margin-top: 0.2rem;
+  width: 100%;
+  height: $border-palm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include grid-media-query(palm) {
+    //font-size: 2.5vw;
+  }
+  @include grid-media-query(portable) {
+    font-size: 90%;
+  }
+  @include grid-media-query(desk) {
+    height: $border;
+    justify-content: flex-end;
+    ul {
+      margin-right: $spacer-xs;
+    }
+  }
+  li {
+    display: inline-block;
+    position: relative;
+    &:not(:last-child):not(:nth-last-child(2)) {
+      margin-right: $gap;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: calc(-#{$gap} / 2);
+        width: 1px;
+        height: 1.5rem;
+        background-color: $gray;
+        display: inline-block;
+      }
+    }
+    @include grid-media-query(palm) {
+      &:not(:last-child):not(:nth-last-child(2)) {
+        margin-right: $gap-palm;
+        &::after {
+          right: calc(-#{$gap-palm} / 2 + -0.15rem);
+          top: 0.1rem;
+          height: 0.8rem;
+          opacity: 0.3;
+        }
+      }
+    }
+    @include grid-media-query(lap) {
+      &:not(:last-child) {
+        margin-right: $gap-portable;
+        &::after {
+          right: calc(-#{$gap-portable} / 2 + -0.15rem);
+          // : 0.1rem;
+          top: 0.2rem;
+          height: 1rem;
+        }
+      }
+    }
+  }
+  a {
+    letter-spacing: 0.1rem;
+    @include grid-media-query(desk) {
+      letter-spacing: 0.2rem;
+    }
+  }
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
+.dropbtn {
+  cursor: default;
+  @include hover {
+    // filter: initial;
+  }
+  position: relative;
+  margin-right: 0.5rem;
+  @include grid-media-query(desk) {
+    margin-right: 1rem;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: -0.9rem;
+    top: 50%;
+    margin-top: -0.1rem;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: $gray transparent transparent transparent;
+    @include grid-media-query(desk) {
+      border-width: 0.4rem 0.3rem 0 0.3rem;
+      margin-top: -0.25rem;
+      right: -0.8rem;
+    }
+  }
+  /*
+  &.active {
+    &::after {
+      // border-width: 0 0.3rem 0.2rem 0.2rem;
+      border-color: transparent transparent $gray transparent;
+      @include grid-media-query(desk) {
+        border-width: 0 0.4rem 0.3rem 0.3rem;
+        // right: -0.8rem;
+      }
+    }
+  } */
+}
+
+/* Dropdown Content (Hidden by Default) */
+
+header {
+  .dropdown-content {
+    padding: 3.5rem 2.5rem 1.3rem;
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.95);
+    min-width: 20rem;
+    z-index: 9999;
+    left: calc(-#{$gap} / 2 - 0.5rem);
+    @include grid-media-query(palm) {
+      left: calc(-#{$gap} / 2 + 0.9rem);
+      padding: 4vw 1.6rem 1rem;
+      min-width: 13rem;
+    }
+    @include grid-media-query(lap) {
+      left: calc(-#{$gap} / 2 + 0.5rem);
+      padding: 4vw 1.6rem 1rem;
+      min-width: 16rem;
+    }
+  }
+  .dropdown-content a {
+    display: block;
+    line-height: 120%;
+    font-size: 90%;
+    padding: 1.1rem 0;
+    @include grid-media-query(portable) {
+      padding: 0.8rem 0;
+    }
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content:hover {
+    display: block;
+  }
+}

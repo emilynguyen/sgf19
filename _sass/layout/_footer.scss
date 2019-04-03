@@ -1,0 +1,78 @@
+#footer-block {
+  background-image: url("../images/footer/stretch.png");
+  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: repeat-y;
+  background-position: center top;
+  width: 100%;
+  position: relative;
+  height: $border;
+  .asce-bookstore,
+  .socials {
+    bottom: 0;
+  }
+}
+
+#landing-block,
+#footer-block {
+  .asce-logo {
+    position: relative;
+    margin-right: 3rem;
+    &::after {
+      transition: background-color 0.4s;
+      content: "";
+      position: absolute;
+      background-color: $gray;
+      width: 1px;
+      height: 1.5rem;
+      right: -1.5rem;
+      top: 0.5rem;
+    }
+  }
+}
+
+.footer {
+  &.white {
+    svg * {
+      fill: #fff !important;
+    }
+    .asce-logo {
+      &::after {
+        background-color: #fff !important;
+      }
+    }
+  }
+}
+
+.asce-bookstore,
+.socials {
+  height: $border;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+}
+
+.asce-bookstore {
+  left: 0;
+  svg {
+    height: calc(#{$border} * 0.35);
+  }
+}
+
+.bookstore-logo {
+}
+
+.socials {
+  text-align: right;
+  // width: 100%;
+  right: 0;
+  justify-content: flex-end;
+  li {
+    display: inline-block;
+    margin-left: 1.5rem;
+  }
+  svg {
+    height: calc(#{$border} * 0.22);
+  }
+}

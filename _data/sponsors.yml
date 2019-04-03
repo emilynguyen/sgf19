@@ -1,0 +1,48 @@
+- name: Rockstar
+  link: http://rockstarenergy.com/
+  img: rockstar.png
+- name: Lyft
+  link: https://www.lyft.com/
+  img: lyft.png
+- name: Yachak Organic
+  link: https://yachak.com/
+  img: yachak.png
+- name: UCSD Bookstore
+  link: https://ucsandiegobookstore.com/
+  img: ucsd-bookstore.png
+- name: La Croix
+  link: https://www.lacroixwater.com/
+  img: la-croix.png
+- name: FM949
+  link: https://alt949.radio.com/
+  img: fm949.png
+- name: ZipCar
+  link: https://www.zipcar.com/
+  img: zipcar.png
+- name: Tasty Bite
+  link: http://tastybite.com/
+  img: tasty-bite.png
+- name: Sambazon
+  link: https://www.sambazon.com/
+  img: sambazon.jpg
+- name: RxBar
+  link: https://www.rxbar.com/
+  img: rxbar.png
+- name: Postmates
+  link: https://postmates.com/
+  img: postmates.png
+- name: Life Aid
+  link: https://www.lifeaidbevco.com/
+  img: lifeaid.png
+- name: Brew Dr. Kombucha
+  link: https://www.brewdrkombucha.com/
+  img: brew-dr-kombucha.png
+- name: Bing Beverage
+  link: https://www.bingbeverage.com/
+  img: bing.png
+- name: ASGS
+  link: http://asgraphicstudio.ucsd.edu
+  img: asgs.png
+- name: TO
+  link: https://to.ucsd.edu
+  img: to.png

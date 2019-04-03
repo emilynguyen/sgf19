@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+
+  <body>
+    <main>
+      <article>
+        <div id="menu-btn-open" class="tablet-up-hide" onclick="openNav()">
+          <div>Menu</div>
+        </div>
+        {% include side-nav.html %}
+        <div id="overlay"></div>
+        <div id="content">
+          {% include header.html %}
+          {{ content }}
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
+
+<script>
+  {
+    var TABLET = 701;
+    var MENU_OPEN = false;
+    var MENU_WIDTH = 28;
+
+    var SLIDING_ELEMENTS = document.getElementsByClassName("side-nav-slide");
+    var $CONTENT = document.getElementById("content");
+    // var $CLOSE_BTN = document.getElementById("menu-btn-close");
+    var $OVERLAY = document.getElementById("overlay");
+
+    function openNav() {
+      var i;
+      for (i = 0; i < SLIDING_ELEMENTS.length; i++) {
+        SLIDING_ELEMENTS[i].style.transform = "translateX(0)";
+      }
+      $CONTENT.style.transform = "translateX(" + (MENU_WIDTH - 3) + "rem)";
+      // $CLOSE_BTN.style.visibility = "visible";
+      $OVERLAY.style.visibility = "visible";
+      MENU_OPEN = true;
+    }
+
+    function closeNav() {
+      var i;
+      for (i = 0; i < SLIDING_ELEMENTS.length; i++) {
+        SLIDING_ELEMENTS[i].style.transform =
+          "translateX(" + -MENU_WIDTH + "rem)";
+      }
+      $CONTENT.style.transform = "translateX(0)";
+      //  $CLOSE_BTN.style.visibility = "hidden";
+      $OVERLAY.style.visibility = "hidden";
+      MENU_OPEN = false;
+    }
+
+    /* Close menu on tap/click */
+    document.getElementById("overlay").addEventListener(
+      "touchstart",
+      function(e) {
+        if (MENU_OPEN) {
+          closeNav();
+        }
+        //e.preventDefault();
+      },
+      false
+    );
+
+    /* Close menu on breakpoint */
+    $(window).resize(function() {
+      var width = $(window).width();
+
+      if (width >= TABLET) {
+        if (MENU_OPEN) {
+          closeNav();
+        }
+      }
+    });
+
+    /* Close menu on ESC */
+    $(document).keyup(function(e) {
+      if (e.key === "Escape") {
+        // escape key maps to keycode `27`
+        if (MENU_OPEN) {
+          closeNav();
+        }
+      }
+    });
+  }
+</script>

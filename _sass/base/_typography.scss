@@ -1,0 +1,136 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 62.5%;
+  @include xxl-up {
+    font-size: 0.57vw;
+  }
+  @include grid-media-query(palm) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: $futura;
+  font-size: 1.9rem;
+  font-weight: 400;
+  // letter-spacing: 0.01rem;
+  line-height: 150%;
+  color: $black1;
+}
+
+p {
+  /*
+  font-family: inherit;
+  letter-spacing: inherit;
+  line-height: inherit; */
+}
+
+/*
+#home-page {
+  p {
+    font-family: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    font-family: $dejavu;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.15rem;
+  }
+}
+*/
+
+.red-text {
+  color: $red;
+}
+
+hr {
+  border-color: $black2;
+  margin-bottom: $spacer-xs;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 130%;
+  font-weight: 500;
+  font-family: $futura;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: 4.5rem;
+  color: $black2;
+  letter-spacing: 0.7rem;
+  @include grid-media-query(portable) {
+    font-size: 3.4rem;
+    letter-spacing: 0.3rem;
+  }
+}
+
+h2 {
+  font-size: 3.1rem;
+  color: $black2;
+  letter-spacing: 0.2rem;
+  @include grid-media-query(portable) {
+    font-size: 2.5rem;
+  }
+}
+
+h3 {
+  font-size: 2.2rem;
+  color: $black2;
+  letter-spacing: 0.19rem;
+  @include grid-media-query(portable) {
+    font-size: 1.9rem;
+    letter-spacing: 0.15rem;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  letter-spacing: inherit;
+  transition: filter 0.4s;
+  @include hover {
+    filter: blur(0.1rem);
+  }
+  &.active {
+    filter: blur(0.1rem);
+  }
+  @include grid-media-query(lap-up) {
+    @include hover {
+      filter: blur(0.15rem);
+    }
+    &.active {
+      filter: blur(0.15rem);
+    }
+  }
+}
+
+.underline-white,
+.underline-dark {
+  $underline-width: 9rem;
+  &::after {
+    content: "";
+    display: block;
+    width: $underline-width;
+    margin-left: 50%;
+    transform: translateX(calc(-#{$underline-width} / 2));
+    height: 1.5rem;
+    margin-top: 0.9rem;
+  }
+}
+
+.underline-white {
+  &::after {
+    background: transparent url("../images/global/underline-white.svg")
+      no-repeat;
+  }
+}
+
+.underline-dark {
+  &::after {
+    background: transparent url("../images/global/underline-dark.svg") no-repeat;
+  }
+}

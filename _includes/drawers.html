@@ -1,0 +1,110 @@
+{% for section in include.data %}
+<div class="drawers-section">
+  <div class="drawers-section-title">
+    <h2>{{ section.sectionTitle }}</h2>
+    <div class="btns">
+      <span class="expand">Expand All</span> |
+      <span class="close disabled">Close All</span>
+    </div>
+  </div>
+  <div class="drawers-container">
+    {% for question in section.questions %}
+    <div class="drawer">
+      <div class="drawer-label">
+        <h3>{{ question.q }}</h3>
+        <div class="caret"></div>
+      </div>
+      <div class="drawer-content">{{ question.a }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
+
+<script>
+  function expandDrawer($drawerLabel) {
+    $drawerLabel.addClass("active");
+    $drawerLabel.find(".caret").addClass("active");
+    $drawerLabel
+      .closest(".drawer")
+      .find(".drawer-content")
+      .slideDown();
+
+    updateBtnsCursor($drawerLabel.closest(".drawers-section"));
+  }
+
+  function closeDrawer($drawerLabel) {
+    $drawerLabel.removeClass("active");
+    $drawerLabel.find(".caret").removeClass("active");
+    $drawerLabel
+      .closest(".drawer")
+      .find(".drawer-content")
+      .slideUp();
+
+    updateBtnsCursor($drawerLabel.closest(".drawers-section"));
+  }
+
+  function updateBtnsCursor($drawersSection) {
+    // Update btns cursors
+    var all_closed = true;
+    var all_expanded = true;
+
+    $drawersSection.find(".drawer-label").each(function() {
+      if ($(this).hasClass("active")) {
+        all_closed = false;
+      } else {
+        all_expanded = false;
+      }
+    });
+
+    var $close = $drawersSection.find(".close");
+    var $expand = $drawersSection.find(".expand");
+
+    if (all_closed) {
+      $close.addClass("disabled");
+      $expand.removeClass("disabled");
+    } else if (all_expanded) {
+      $expand.addClass("disabled");
+      $close.removeClass("disabled");
+    }
+    if (!all_closed) {
+      $close.removeClass("disabled");
+    }
+    if (!all_expanded) {
+      $expand.removeClass("disabled");
+    }
+  }
+
+  function toggleDrawer($drawerLabel) {
+    $drawerLabel.toggleClass("active");
+    $drawerLabel.find(".caret").toggleClass("active");
+    $drawerLabel
+      .closest(".drawer")
+      .find(".drawer-content")
+      .slideToggle();
+
+    updateBtnsCursor($drawerLabel.closest(".drawers-section"));
+  }
+
+  $(".drawer-label").click(function() {
+    toggleDrawer($(this));
+  });
+
+  $(".drawers-section .expand").click(function() {
+    $(this)
+      .closest(".drawers-section")
+      .find(".drawer-label")
+      .each(function() {
+        expandDrawer($(this));
+      });
+  });
+
+  $(".drawers-section .close").click(function() {
+    $(this)
+      .closest(".drawers-section")
+      .find(".drawer-label")
+      .each(function() {
+        closeDrawer($(this));
+      });
+  });
+</script>

@@ -1,0 +1,369 @@
+#landing-block {
+  text-transform: uppercase;
+  min-height: 40rem;
+  height: calc(100vh - (#{$border} * 2));
+  /*
+  background-image: url("../images/home/landing/desert.jpg");
+  background-size: cover;
+  background-position: center center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  @include grid-media-query(portable) {
+    height: calc(100vh - (#{$border-palm} * 2));
+  }
+  .footer {
+    svg * {
+      fill: #414042;
+      transition: fill 0.4s;
+    }
+    .asce-bookstore,
+    .socials {
+      bottom: -$border;
+    }
+  }
+  @include grid-media-query(tablet-down) {
+    margin-top: $border-palm;
+  }
+}
+
+#glitch {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-image: url("../images/home/landing/desert.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+#landing-border {
+  width: 101%;
+  position: absolute;
+  background-color: #fff;
+  z-index: 999;
+  height: calc(#{$border} + 1%);
+  bottom: calc(#{-$border} - 1%);
+  @include grid-media-query(portable) {
+    height: calc(#{$border-palm} + 1%);
+    bottom: calc(#{-$border-palm} - 1%);
+  }
+}
+
+#sun-god {
+  position: relative;
+  width: 41vw;
+}
+
+#sun-god-palm {
+  text-align: center;
+  height: 1.7vh;
+  // margin-bottom: 0.1vh;
+}
+
+#countdown-container {
+  @extend .lighten;
+  z-index: 999;
+  user-select: none;
+  text-align: center;
+  margin: auto;
+  color: $red;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "DejaVu Sans Mono", monospace;
+  line-height: 0;
+  letter-spacing: -0.05rem;
+  font-size: 4.5vh;
+  @include grid-media-query(lap-up) {
+    font-size: 3.5vw;
+  }
+}
+
+#countdown {
+  margin-top: -11vh;
+  height: 100%;
+  @include grid-media-query(lap-up) {
+    margin-top: 5vw;
+    margin-bottom: 7vw;
+  }
+}
+
+#date {
+  letter-spacing: 0.2rem;
+}
+
+#details {
+  letter-spacing: 0.35vh;
+  font-size: 2.2vh;
+  margin-top: -1vh;
+  line-height: 155%;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: -4.5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5.5vh;
+    border: 0.05rem solid $red;
+    @include grid-media-query(lap-up) {
+      display: none;
+    }
+  }
+  @include grid-media-query(lap-up) {
+    letter-spacing: 0.3vw;
+    font-size: 1.5vw;
+    margin-top: 2vw;
+    br {
+      display: none;
+    }
+  }
+  @include grid-media-query(lap-up) {
+    letter-spacing: 0.32vw;
+  }
+}
+
+.cd-unit {
+  display: block;
+  position: relative;
+  margin: 15vh 0;
+  @include grid-media-query(lap-up) {
+    margin: 0;
+    display: inline-block;
+  }
+  &:not(:last-child)::after {
+    content: "//";
+    position: absolute;
+    bottom: -9vh;
+    left: 50%;
+    transform: translateX(-50%) scale(0.5);
+    @include grid-media-query(lap-up) {
+      display: block;
+      content: " //";
+      width: initial;
+      position: initial;
+      bottom: initial;
+      left: initial;
+      display: inline-block;
+      margin: 0 -2rem 0 -1rem;
+      transform: scale(0.6);
+      letter-spacing: 1.5rem;
+    }
+  }
+}
+
+.cd-number {
+  text-align: center;
+  position: relative;
+  text-align: center;
+  &::before {
+    display: block;
+    margin: 0;
+    padding: 0;
+    content: "//";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+  }
+  &::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -1.4vh;
+    font-size: 1.5vh;
+    @include grid-media-query(lap-up) {
+      bottom: -2vw;
+      font-size: 1.2vw;
+    }
+  }
+}
+
+#cd-days {
+  &::after {
+    content: "Days";
+  }
+}
+
+#cd-hours {
+  &::after {
+    content: "Hours";
+  }
+}
+
+#cd-mins {
+  &::after {
+    content: "Mins";
+  }
+}
+
+#cd-secs {
+  &::after {
+    content: "Secs";
+  }
+}
+
+/*
+
+#countdown-container {
+  @extend .lighten;
+  z-index: 999;
+  user-select: none;
+  text-align: center;
+  margin: auto;
+  color: $red;
+  mix-blend-mode: screen;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "DejaVu Sans Mono", monospace;
+  line-height: 0;
+  letter-spacing: -0.05rem;
+  font-size: 3.5vw;
+  
+  @include grid-media-query(palm) {
+     font-size: 5.5vw;
+  } 
+  @include grid-media-query(portable) {
+    font-size: 4.5vw;
+  }
+}
+
+#countdown {
+  height: 100%;
+  margin-top: 0;
+  margin-top: 5vw;
+  margin-bottom: 7vw;
+  
+  @include grid-media-query(palm) {
+    margin-top: 9vw;
+    margin-bottom: 11vw;
+  } 
+  @include grid-media-query(portable) {
+    margin-top: 6.5vw;
+    margin-bottom: 8.5vw;
+  }
+}
+
+#date {
+  letter-spacing: 0.2rem;
+}
+
+#details {
+  line-height: 155%;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: -3vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5.5vh;
+    border: 0.05rem solid $red;
+    display: none;
+  }
+  letter-spacing: 0.3vw;
+  font-size: 1.53vw;
+  margin-top: 2vw;
+  br {
+    display: none;
+  }
+  //letter-spacing: 0.32vw;
+  
+  @include grid-media-query(palm) {
+    font-size: 5vw;
+    br {
+      display: block;
+    }
+  } 
+  @include grid-media-query(portable) {
+    font-size: 2.03vw;
+  }
+}
+
+.cd-unit {
+  position: relative;
+  margin: 0;
+  display: inline-block;
+  &:not(:last-child)::after {
+    position: absolute;
+    display: block;
+    content: " //";
+    width: initial;
+    position: initial;
+    display: inline-block;
+    margin: 0 -2rem 0 -1rem;
+    transform: scale(0.6);
+    letter-spacing: 1.5rem;
+  }
+}
+
+.cd-number {
+  text-align: center;
+  position: relative;
+  text-align: center;
+  &::before {
+    display: block;
+    margin: 0;
+    padding: 0;
+    content: "//";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+  }
+  &::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -2vw;
+    font-size: 1.2vw;
+
+    @include grid-media-query(palm) {
+      font-size: 2.3vw;
+    }
+    @include grid-media-query(lap) {
+      font-size: 2vw;
+    }
+  }
+}
+
+#cd-days {
+  &::after {
+    content: "Days";
+  }
+}
+
+#cd-hours {
+  &::after {
+    content: "Hours";
+  }
+}
+
+#cd-mins {
+  &::after {
+    content: "Mins";
+  }
+}
+
+#cd-secs {
+  &::after {
+    content: "Secs";
+  }
+}
+*/

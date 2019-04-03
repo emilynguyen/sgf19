@@ -1,0 +1,189 @@
+#about-block {
+  @extend .block;
+  padding-top: 40%;
+  background-color: $blue;
+  position: relative;
+  width: 100%;
+  background-image: url("../images/home/about/stretch-diagonal.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  //min-height: 110vh;
+  @include grid-media-query(palm) {
+    min-height: 80vh;
+  }
+  @include grid-media-query(desk) {
+    //min-height: none;
+    height: 110vh;
+    max-height: 80rem;
+  }
+  .sidebar {
+    left: 0;
+    top: calc(#{$diagonal-height} - 3rem);
+    $angle: 2.8rem;
+    $angle-complement: calc(100% - #{$angle});
+    height: calc(104% - #{$diagonal-height});
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 $angle, 100% 0%, 100% $angle-complement, 0% 100%);
+    @include grid-media-query(palm) {
+      top: calc(#{$diagonal-height-palm} - 1.3rem);
+      $angle: 2vw;
+      $angle-complement: calc(100% - #{$angle});
+      height: calc(102.8% - #{$diagonal-height-palm});
+      clip-path: polygon(0 $angle, 100% 0%, 100% $angle-complement, 0% 100%);
+    }
+    @include grid-media-query(lap) {
+      top: calc(#{$diagonal-height-palm} - 2.2rem);
+      $angle: 2vw;
+      $angle-complement: calc(100% - #{$angle});
+      height: calc(105.3% - #{$diagonal-height-palm});
+      clip-path: polygon(0 $angle, 100% 0%, 100% $angle-complement, 0% 100%);
+    }
+    .camera-info {
+      height: 100%;
+      box-sizing: border-box;
+      padding: 15rem 0;
+      max-height: 95rem;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      @include grid-media-query(portable) {
+        max-height: 80vh;
+      }
+    }
+    img {
+      @extend .lighten;
+      width: 35%;
+    }
+  }
+  .slashes {
+    top: 10rem;
+  }
+}
+
+$blob-ratio: 1.069;
+
+#about-wrapper {
+  position: absolute;
+  top: 0;
+  margin-top: 40%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: url("../images/home/about/blob.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    $blob-width: 25rem;
+    $blob-height: $blob-width / $blob-ratio;
+    right: 7vw;
+    top: -$blob-height / 1.1;
+    width: $blob-width;
+    height: $blob-height;
+    @include grid-media-query(portable) {
+      $blob-width: 10rem;
+      $blob-height: $blob-width / $blob-ratio;
+      right: 15vw;
+      top: -$blob-height/2.7;
+      width: $blob-width;
+      height: $blob-height;
+    }
+  }
+}
+
+#about {
+  position: relative;
+  &.content {
+    // override
+    @include grid-media-query(palm) {
+      width: 80%;
+    }
+    @include grid-media-query(lap) {
+      width: 65%;
+    }
+  }
+  h1 {
+    @include grid-media-query(portable) {
+      text-align: center;
+    }
+  } /*
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: url("../images/home/about/blob.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    $blob-width: 25rem;
+    $blob-height: $blob-width / $blob-ratio;
+    right: -$blob-width / 3;
+    top: -$blob-height/1.1;
+    width: $blob-width;
+    height: $blob-height;
+    @include grid-media-query(portable) {
+      $blob-width: 10rem;
+      $blob-height: $blob-width / $blob-ratio;
+      right: 2rem;
+      top: -3rem;
+      width: $blob-width;
+      height: $blob-height;
+    }
+  } */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    grid-gap: $spacer;
+    @include grid-media-query(palm) {
+      grid-gap: 4rem;
+    }
+    @include grid-media-query(portable) {
+      margin-top: 8rem;
+    }
+    @include grid-media-query(lap) {
+      grid-template-columns: 14vw 1fr;
+    }
+    @include grid-media-query(desk) {
+      grid-template-columns: auto 18rem auto;
+    }
+  }
+
+  .leaf {
+    z-index: 999;
+    margin-top: -8rem;
+    margin-right: -3rem; // Offset white space in leaf pngs
+    img {
+      width: 100%;
+      display: block;
+    }
+    mix-blend-mode: multiply;
+    &-stretch {
+      height: 0;
+      margin-top: -0.1rem;
+      background-image: url("../images/home/about/leaf-stretch.png");
+      background-size: 100%;
+      background-repeat: repeat-y;
+    }
+    @include grid-media-query(portable) {
+      margin-top: -4rem;
+    }
+  }
+  .text-container {
+    p {
+      padding: 0;
+      padding-top: 1rem;
+    }
+    margin-top: -0.7rem;
+    height: 0;
+    overflow: hidden;
+    z-index: 999;
+  }
+}

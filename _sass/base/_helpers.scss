@@ -1,0 +1,64 @@
+.unselectable {
+  user-select: none;
+}
+
+.mr-xs {
+  margin-right: $spacer-xs !important;
+}
+
+.ml-xs {
+  margin-left: $spacer-xs !important;
+}
+
+/* MARGIN BOTTOM */
+
+.mb-xs {
+  margin-bottom: $spacer-xs;
+}
+
+.mb {
+  margin-bottom: $spacer;
+}
+
+.lighten {
+  mix-blend-mode: screen;
+  // mix-blend-mode: screen;
+  //mix-blend-mode: overlay;
+}
+
+.text-right {
+  text-align: right;
+}
+
+@each $breakpoint in $breakpoints {
+  $name: nth($breakpoint, 1);
+  @include grid-media-query($name) {
+    .#{$name}-hide {
+      display: none !important;
+    }
+  }
+}
+
+.hide {
+  display: none !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-h-center {
+  @extend .flex;
+  justify-content: center;
+}
+
+.flex-v-center {
+  @extend .flex;
+  align-items: center;
+}
+
+.flex-center {
+  @extend .flex;
+  justify-content: center;
+  align-items: center;
+}

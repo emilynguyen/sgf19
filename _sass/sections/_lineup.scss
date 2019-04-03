@@ -1,0 +1,213 @@
+#lineup-block {
+  @extend .block;
+  text-transform: uppercase;
+  font-weight: 500;
+  background-image: url("../images/home/lineup/stretch.png");
+  background-size: cover;
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  background-position: center top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  user-select: none;
+  font-family: $futura;
+  h1,
+  * {
+    color: #fff;
+  }
+  .asce-logo {
+    margin-top: -1.2rem;
+    svg {
+      fill: #fff;
+      height: 3.5rem;
+    }
+  }
+}
+
+.crosshair {
+  position: absolute;
+  width: 20rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+$lineup-width: 80%;
+$lineup-max-width: 90rem;
+
+#lineup-container {
+  width: $lineup-width;
+  max-width: $lineup-max-width;
+  position: relative;
+}
+
+#lineup {
+  line-height: 125%;
+  margin: 3rem 0 7rem;
+  position: relative;
+  width: 100%;
+  font-size: 6rem;
+  &.auto-focus {
+    .blur,
+    .clear {
+      cursor: auto;
+    }
+    .blur {
+      opacity: 0;
+    }
+    .clear {
+      opacity: 1 !important;
+      clip-path: none !important;
+    }
+  }
+  @supports not (clip-path: circle(0)) {
+    .blur,
+    .clear {
+      cursor: auto;
+    }
+    .blur {
+      opacity: 0;
+    }
+    .clear {
+      opacity: 1 !important;
+      clip-path: none !important;
+    }
+  }
+}
+
+#lineup-noscript {
+  margin-top: 8rem;
+  font-size: 3rem;
+  line-height: 125%;
+  letter-spacing: 0.1rem;
+  @include grid-media-query(lap-up) {
+    font-size: 4rem;
+  }
+}
+
+.blur {
+  filter: blur(0.8rem);
+  opacity: 0.5;
+}
+
+.blur,
+.clear {
+  cursor: none;
+  padding: 6vw;
+}
+
+.clear {
+  clip-path: circle(0);
+  transform: scale(1.05);
+  top: 0;
+  position: absolute;
+  width: $lineup-width;
+  max-width: $lineup-max-width;
+}
+
+.switch-grid {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+$switch-border: 0.1rem;
+$switch-height: 2.4rem;
+$switch-width: 7.2rem;
+#focus-switch-container {
+  @supports not (clip-path: circle(5vw)) {
+    display: none;
+  }
+
+  font-family: $dejavu;
+  // font-size: 1.9rem;
+  letter-spacing: 0.2rem;
+  line-height: 1.8rem;
+  position: relative;
+  $fontSize: 1.5rem;
+  $inputFontSize: $fontSize - 0;
+  $lineHeight: 1;
+  $inputLineHeight: 1.24;
+  $brown: #232323;
+  .switch {
+    border: $switch-border solid $red;
+    color: $red;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;
+    height: $switch-height;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: $switch-width;
+    user-select: none;
+    &.active {
+      &:after {
+        color: $brown;
+      }
+      &:before {
+        color: $red;
+      }
+    }
+    &:after,
+    &:before {
+      z-index: 9999;
+      color: $red;
+      content: "AF";
+      display: block;
+      font-size: $inputFontSize;
+      line-height: $lineHeight;
+      height: 100%;
+      left: 0;
+      padding: 0.5rem 0;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 51%;
+    }
+    &:before {
+      background-color: none;
+      content: "MF";
+      left: auto;
+      right: 0;
+      width: 48%;
+      color: $brown;
+      z-index: 9999;
+    }
+    .knob {
+      z-index: 0;
+      background-color: $red;
+      border-bottom: none;
+      border-top: none;
+      display: block;
+      font-size: $inputFontSize;
+      height: 100%;
+      left: 50%;
+      position: relative;
+      top: 0;
+      width: $switch-width/2;
+      z-index: 2;
+      transition: all 0.15s ease;
+      &:before {
+        border-left-color: transparent;
+        border-right-color: inherit;
+        margin-left: -1rem;
+      }
+    }
+    input {
+      position: absolute;
+      visibility: hidden;
+    }
+    input:checked + .knob {
+      left: -$switch-border;
+      &:before {
+        color: $red;
+      }
+    }
+  }
+}

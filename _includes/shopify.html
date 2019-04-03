@@ -1,0 +1,242 @@
+<div id="collection-component-3f7d08fd71b"></div>
+<script type="text/javascript">
+  /*<![CDATA[*/
+
+  (function() {
+    var scriptURL = "../assets/scripts/vendor/shopify.min.js";
+    if (window.ShopifyBuy) {
+      if (window.ShopifyBuy.UI) {
+        ShopifyBuyInit();
+      } else {
+        loadScript();
+      }
+    } else {
+      loadScript();
+    }
+
+    function loadScript() {
+      var script = document.createElement("script");
+      script.async = true;
+      script.src = scriptURL;
+      (
+        document.getElementsByTagName("head")[0] ||
+        document.getElementsByTagName("body")[0]
+      ).appendChild(script);
+      script.onload = ShopifyBuyInit;
+    }
+
+    function ShopifyBuyInit() {
+      var client = ShopifyBuy.buildClient({
+        domain: "tritonoutfitters.myshopify.com",
+        storefrontAccessToken: "85c9631ed913d50d99d27b16811ce77a"
+      });
+
+      ShopifyBuy.UI.onReady(client).then(function(ui) {
+        ui.createComponent("collection", {
+          id: 86978101307,
+          node: document.getElementById("collection-component-3f7d08fd71b"),
+          moneyFormat: "%24%7B%7Bamount%7D%7D",
+          options: {
+            product: {
+              variantId: "all",
+              contents: {
+                imgWithCarousel: false,
+                variantTitle: false,
+                description: false,
+                buttonWithQuantity: false,
+                quantity: false
+              },
+              styles: {
+                product: {
+                  "text-align": "left",
+                  "@media (min-width: 601px)": {
+                    "max-width": "calc(33.33333% - 30px)",
+                    "margin-left": "30px",
+                    "margin-bottom": "50px"
+                  }
+                },
+                button: {
+                  "background-color": "transparent",
+                  border: "1px solid #eb3700",
+                  color: "#eb3700",
+                  "letter-spacing": "2px",
+                  "font-size": "14px",
+                  "font-family": "DejaVu Sans Mono, monospace",
+                  transition: "filter .3s",
+                  ":hover": {
+                    filter: "blur(1.5px)",
+                    "background-color": "transparent",
+                    color: "#eb3700"
+                  },
+                  "border-radius": "0",
+                  "font-weight": "normal",
+                  ":focus": {
+                    "background-color": "transparent"
+                  }
+                },
+                variantTitle: {
+                  "font-family": "DejaVu Sans Mono, monospace",
+                  "font-weight": "normal"
+                },
+                title: {
+                  "font-weight": "500",
+                  color: "#242424"
+                },
+                description: {
+                  "font-family": "DejaVu Sans Mono, monospace",
+                  "font-weight": "normal"
+                },
+                price: {
+                  "font-family": "DejaVu Sans Mono, monospace",
+                  color: "#231f20",
+                  "font-weight": "normal"
+                },
+                compareAt: {
+                  "font-family": "DejaVu Sans Mono, monospace",
+                  "font-weight": "normal",
+                  color: "#231f20"
+                }
+              }
+            },
+            cart: {
+              contents: {
+                button: true
+              },
+              styles: {
+                cart: {
+                  "background-color": "#fff"
+                },
+                button: {
+                  "background-color": "transparent",
+                  border: "1px solid #eb3700",
+                  color: "#eb3700",
+                  "letter-spacing": "2px",
+                  "font-size": "14px",
+                  "font-family": "DejaVu Sans Mono, monospace",
+                  transition: "filter .3s",
+                  ":hover": {
+                    filter: "blur(1.5px)",
+                    "background-color": "transparent",
+                    color: "#eb3700"
+                  },
+                  "border-radius": "0",
+                  "font-weight": "normal",
+                  ":focus": {
+                    "background-color": "transparent"
+                  }
+                },
+                footer: {
+                  "background-color": "#fff"
+                }
+              }
+            },
+            modalProduct: {
+              contents: {
+                img: false,
+                imgWithCarousel: true,
+                variantTitle: false,
+                buttonWithQuantity: true,
+                button: false,
+                quantity: false
+              },
+              styles: {
+                product: {
+                  "@media (min-width: 601px)": {
+                    "max-width": "100%",
+                    "margin-left": "0px",
+                    "margin-bottom": "0px"
+                  }
+                },
+                button: {
+                  "background-color": "transparent",
+                  border: "1px solid #eb3700",
+                  color: "#eb3700",
+                  "letter-spacing": "2px",
+                  "font-size": "14px",
+                  "font-family": "DejaVu Sans Mono, monospace",
+                  transition: "filter .3s",
+                  ":hover": {
+                    filter: "blur(1.5px);"
+                  },
+                  "border-radius": "0",
+                  "font-weight": "normal",
+                  ":focus": {
+                    "background-color": "transparent"
+                  }
+                },
+                variantTitle: {
+                  "font-family": "DejaVu Sans Mono, monospace",
+                  "font-weight": "normal"
+                },
+                title: {
+                  "font-weight": "normal"
+                },
+                description: {
+                  "font-family": "DejaVu Sans Mono, monospace",
+                  "font-weight": "normal"
+                },
+                price: {
+                  "font-family": "DejaVu Sans Mono, monospace",
+                  "font-weight": "normal"
+                },
+                compareAt: {
+                  "font-family": "DejaVu Sans Mono, monospace",
+                  "font-weight": "normal"
+                }
+              }
+            },
+            toggle: {
+              styles: {
+                toggle: {
+                  "font-family": "DejaVu Sans Mono, monospace",
+                  "background-color": "#242424",
+                  transition: "filter .3s",
+                  ":hover": {
+                    filter: "blur(1.5px)",
+                    "background-color": "#242424"
+                  },
+                  "font-weight": "normal",
+                  ":focus": {
+                    filter: "blur(1.5px)",
+                    "background-color": "#242424"
+                  }
+                },
+                count: {
+                  color: "#fff",
+                  "letter-spacing": "2px",
+                  "font-size": "14px",
+                  ":hover": {
+                    color: "#fff"
+                  }
+                },
+                iconPath: {
+                  fill: "#fff"
+                }
+              }
+            },
+            option: {
+              styles: {
+                label: {
+                  "font-family": "DejaVu Sans Mono, monospace"
+                },
+                select: {
+                  "font-family": "DejaVu Sans Mono, monospace"
+                }
+              }
+            },
+            productSet: {
+              styles: {
+                products: {
+                  "@media (min-width: 601px)": {
+                    "margin-left": "-30px"
+                  }
+                }
+              }
+            }
+          }
+        });
+      });
+    }
+  })();
+  /*]]>*/
+</script>

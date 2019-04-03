@@ -1,0 +1,50 @@
+/*
+// Extra small devices (480px and up)
+@mixin xs-up {
+  @media (min-width: $xs-screen) {
+    @content;
+  }
+}
+
+// Small devices (landscape phones, 600px and up)
+@mixin sm-up {
+  @media (min-width: $sm-screen) {
+    @content;
+  }
+}
+
+// Medium devices (tablets, 840px and up)
+@mixin md-up {
+  @media (min-width: $md-screen) {
+    @content;
+  }
+}
+
+// Large devices (desktops, 960px and up)
+@mixin lg-up {
+  @media (min-width: $lg-screen) {
+    @content;
+  }
+}
+
+// Extra large devices (large desktops, 1280px and up)
+@mixin xl-up {
+  @media (min-width: $xl-screen) {
+    @content;
+  }
+}
+*/
+// Extra extra large devices (large desktops, 2000px and up)
+@mixin xxl-up {
+  @media (min-width: $xxl-screen) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}

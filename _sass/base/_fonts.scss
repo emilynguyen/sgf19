@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Futura PT";
+  src: url("../../assets/fonts/FuturaPT-Book.woff2") format("woff2"),
+    url("../../assets/fonts/FuturaPT-Book.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("../../assets/fonts/FuturaPT-Medium.woff2") format("woff2"),
+    url("../../assets/fonts/FuturaPT-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DejaVu Sans Mono";
+  src: url("../../assets/fonts/DejaVuSansMono.woff2") format("woff2"),
+    url("../../assets/fonts/DejaVuSansMono.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

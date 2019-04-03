@@ -1,0 +1,306 @@
+---
+layout: home
+title: Home
+permalink: /
+---
+
+<div id="landing-block">
+  <div id="countdown-container">
+    <div id="countdown-wrapper">
+      <img
+        id="sun-god"
+        class="lighten unselectable palm-hide"
+        src="assets/images/home/landing/sun-god.svg"
+        alt="Sun God Festival"
+      />
+      <div id="countdown">
+        <div class="cd-unit">
+          <span id="cd-days" class="cd-number">00</span>
+        </div>
+        <div class="cd-unit">
+          <span id="cd-hours" class="cd-number">00</span>
+        </div>
+        <div class="cd-unit">
+          <span id="cd-mins" class="cd-number">00</span>
+        </div>
+        <div class="cd-unit">
+          <span id="cd-secs" class="cd-number">00</span>
+        </div>
+      </div>
+      <div id="details">
+        <div>
+          <img
+            id="sun-god-palm"
+            class="lighten unselectable lap-up-hide"
+            src="assets/images/home/landing/sun-god.svg"
+            alt="Sun God Festival"
+          />
+        </div>
+        <span id="date">04.27.2019</span
+        ><span class="palm-hide">&nbsp; | &nbsp;</span><br />12pm - 6pm<span
+          class="palm-hide"
+          >&nbsp; | &nbsp;</span
+        ><br />Rimac
+      </div>
+    </div>
+  </div>
+
+  <div class="portable-hide">
+    {% include footer.html %}
+  </div>
+  <div id="landing-border"></div>
+  <div id="glitch"></div>
+</div>
+
+<div id="lineup-block">
+  <img
+    class="crosshair lighten"
+    src="assets/images/home/lineup/crosshair.svg"
+    alt=""
+  />
+  <div id="lineup-container">
+    <h1 class="underline-white">Lineup</h1>
+    <div id="lineup" class="portable-hide">
+      <div class="blur lineup-text">
+        {% for artist in site.data.lineup %}
+        {{ artist.name }}{% if forloop.last == false %}<br />{% endif %}{%
+        endfor %}
+      </div>
+      <div class="clear lineup-text">
+        {% for artist in site.data.lineup %}
+        {{ artist.name }}{% if forloop.last == false %}<br />{% endif %}{%
+        endfor %}
+      </div>
+    </div>
+    <div id="lineup-noscript" class="desk-hide">
+      {% for artist in site.data.lineup %}
+      {{ artist.name }}{% if forloop.last == false %}<br />{% endif %}{% endfor
+      %}
+    </div>
+
+    <div class="grid portable-hide">
+      <div class="grid__item one-third"></div>
+      <div class="grid__item one-third asce-logo">
+        <a href="http://asce.ucsd.edu" target="_blank"
+          >{% include asce-logo.html %}</a
+        >
+      </div>
+      <div id="focus-switch-container" class="grid__item one-third">
+        <label class="switch lighten">
+          <input type="checkbox" />
+          <span class="knob"></span>
+        </label>
+      </div>
+    </div>
+    <div id="lens"></div>
+  </div>
+</div>
+
+<div id="tip-container" class="palm-hide">
+  <div id="tips"></div>
+</div>
+
+<div id="about-block">
+  <div id="about-wrapper"></div>
+  <img
+    class="slashes slashes-right"
+    src="assets/images/global/slashes.svg"
+    alt=""
+  />
+  <div class="sidebar">
+    <div class="camera-info">
+      <img src="assets/images/home/about/camera-text.svg" alt="" />
+      <img src="assets/images/home/about/camera-icons.svg" alt="" />
+    </div>
+  </div>
+  <div id="about" class="content">
+    <div class="desk-hide">
+      <h1 class="underline-dark">About</h1>
+    </div>
+    <div class="about-grid">
+      <div class="portable-hide">
+        <h1 class="underline-dark">About</h1>
+      </div>
+
+      <div class="leaf">
+        <img src="assets/images/home/about/leaf-top.png" alt="" />
+        <div class="leaf-stretch"></div>
+        <img src="assets/images/home/about/leaf-bottom.png" alt="" />
+      </div>
+
+      <div class="text-container">
+        <div class="text">
+          <p class="mb">
+            The Sun God Festival is a student-curated, daylong music and arts
+            festival at UC San Diego. Named as one of Live Nation’s “Top 5
+            College Concerts That Should Be Actual Festivals”, the Sun God
+            Festival is continuously reimagined to deliver students with
+            thrilling moments and life-long memories from live performances by
+            national touring artists, diverse food vendors, vibrant art and
+            décor, and interactive brand activations.
+          </p>
+          <a href="about" class="btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="white-triangle white-triangle-up"></div>
+</div>
+
+<div id="safety-block">
+  <div id="safety" class="content">
+    <div>
+      <img
+        class="mb"
+        src="assets/images/home/safety/we-care.svg"
+        alt="We care about your safety"
+      />
+      <p class="mb">Learn more about alcohol<br />and drug safety</p>
+      <a href="safety" class="btn">Learn More</a>
+    </div>
+  </div>
+</div>
+
+<div id="volunteer-block">
+  <div class="white-triangle white-triangle-down"></div>
+  <img
+    class="slashes slashes-left"
+    src="assets/images/global/slashes.svg"
+    alt=""
+  />
+
+  <div class="sidebar"></div>
+
+  <div id="volunteer" class="content">
+    <h1 class="underline-dark">Registration</h1>
+    <div class="flamingo-container">
+      <img
+        class="leaf leaf-top"
+        src="assets/images/home/registration/leaf-top.png"
+        alt=""
+      />
+      <img
+        class="leaf leaf-bottom"
+        src="assets/images/home/registration/leaf-bottom.png"
+        alt=""
+      />
+      <img
+        class="flamingo mb-xs"
+        src="assets/images/home/registration/flamingo.png"
+        alt=""
+      />
+    </div>
+    <p class="mb">
+      Registration is now OPEN and closes on April 24th at 11:59PM! Undergrads
+      who've attended UCSD for a minimum of one quarter can register to attend.
+      Graduate students will need to purchase a ticket at the UCSD Box Office.
+    </p>
+    <a href="registration" class="btn">Register</a>
+  </div>
+</div>
+
+<div id="footer-block">
+  {% include footer.html white="true" %}
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Set the date we're counting down to
+    var countDownDate = new Date("Apr 27, 2019 12:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+      // Get todays date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Prepend 0 if < 2 digits
+      if (days.toString().length < 2) days = "0" + days;
+      if (hours.toString().length < 2) hours = "0" + hours;
+      if (mins.toString().length < 2) mins = "0" + mins;
+      if (secs.toString().length < 2) secs = "0" + secs;
+
+      document.getElementById("cd-days").innerHTML = days;
+      document.getElementById("cd-hours").innerHTML = hours;
+      document.getElementById("cd-mins").innerHTML = mins;
+      document.getElementById("cd-secs").innerHTML = secs;
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  });
+</script>
+
+<!--
+<script src="assets/scripts/vendor/mgGlitch.min.js"></script>
+<script>
+  $("#glitch").mgGlitch({
+    // set 'true' to stop the plugin
+    destroy: false,
+
+    // set 'false' to stop glitching
+    glitch: true,
+
+    // set 'false' to stop scaling
+    scale: true,
+
+    // set 'false' to stop glitch blending
+    blend: true,
+
+    // select blend mode type
+    blendModeType: "hue",
+
+    glitch1TimeMin: 200,
+    // set max time for glitch 1 elem
+    glitch1TimeMax: 400,
+    // set min time for glitch 2 elem
+    glitch2TimeMin: 10,
+    // set max time for glitch 2 elem
+    glitch2TimeMax: 100,
+
+    // z-index
+    zIndexStart: 1
+  });
+</script>
+-->
+<!--
+<script src="assets/scripts/vendor/glitch.jquery.js"></script>
+<script>
+  $("#sun-god").glitch({
+    bg: "black",
+    minint: 1,
+    maxint: 3,
+    maxglitch: 15,
+    hoffset: 10,
+    voffset: 3,
+    direction: "random"
+  });
+</script> -->
+
+<script>
+  var is_opera = !!window.opera || navigator.userAgent.indexOf(" OPR/") >= 0;
+  var is_chrome = !!window.chrome && !is_opera;
+  var is_explorer =
+    typeof document !== "undefined" && !!document.documentMode && !isEdge;
+  var is_firefox = typeof window.InstallTrigger !== "undefined";
+  var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+</script>
+
+<script src="assets/scripts/landing.js"></script>
+<script src="assets/scripts/lineup.js"></script>
+<script src="assets/scripts/focus-toggle.js"></script>
+<script src="assets/scripts/tips.js"></script>
+<script src="assets/scripts/leaf.js"></script>

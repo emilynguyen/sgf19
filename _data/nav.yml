@@ -1,0 +1,31 @@
+- title: Home
+  url: ""
+- title: Lineup
+  url: lineup
+- title: Info
+  dropdownID: info
+  dropdown:
+    - title: About
+      url: about
+    - title: Registration
+      url: registration
+    - title: Attractions + Vendors
+      url: attractions-and-vendors
+    - title: Apparel
+      url: apparel
+    - title: Transportation
+      url: transportation
+    - title: ADA Info
+      url: ada
+    - title: Volunteers
+      url: volunteer
+    - title: Sun God For A Cause
+      url: for-a-cause
+    - title: Sun God Babies
+      url: sgfbabies
+    - title: FAQ
+      url: faq
+- title: Safety
+  url: safety
+- title: Sponsors
+  url: sponsors

@@ -1,0 +1,56 @@
+<header class="tablet-down-hide">
+  <div class="grid">
+    <div class="grid__item one-quarter portable-hide">
+      <div id="sgf-logo-container" class="ml-xs">
+        <a id="sgf-logo" href="" class="unselectable">
+          <img
+            class="sgf-logo-default"
+            src="assets/images/global/sgf-logo.png"
+            alt="Sun God Festival 2019"/>
+          <img
+            class="sgf-logo-blur"
+            src="assets/images/global/sgf-logo-blur.png"
+            alt=""
+        /></a>
+      </div>
+    </div>
+    <div class="grid__item desk--three-quarters">
+      <nav>
+        <ul>
+          <!--
+              {% assign sorted_pages = site.pages | sort:"order" %}{% for item in sorted_pages %}{% if item.order %}<li><a {% if page.url == item.url %}class="active"{% endif %} href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a></li>{% endif %}{% endfor %}
+          -->
+         
+          {% for item in site.data.nav %}{% if item.dropdown %}
+          <li>
+            <div class="dropdown">
+              <a class="dropbtn {% for sub in item.dropdown %}
+              {% capture suburl %}/{{sub.url}}/{% endcapture %}
+              {% if page.permalink == suburl || %}active{% break %}{% endif %}{% endfor %}">{{ item.title }}</a>
+              <div class="dropdown-content">
+                {% for sub in item.dropdown %}
+                {% capture suburl %}/{{sub.url}}/{% endcapture %}
+                <a href="{{ sub.url }}" {% if page.permalink == suburl %}class="active"{% endif %}>{{ sub.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+          </li>
+          {% else %}
+          <li>
+              {% capture mainurl %}{% if item.url != "" %}/{{item.url}}{% endif %}/{% endcapture %}
+            <a href="{{ item.url }}" {% if page.permalink == mainurl %}class="active"{% endif %}>{{ item.title }}</a>
+          </li>
+          {% endif %} {% endfor %}
+          <li>
+            <a href='registration' class="btn">Register</a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+
+</header>
+
+
