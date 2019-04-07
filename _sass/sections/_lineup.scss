@@ -1,5 +1,6 @@
 #lineup-block {
   @extend .block;
+  max-width: auto;
   text-transform: uppercase;
   font-weight: 500;
   background-image: url("../images/home/lineup/stretch.png");
@@ -14,6 +15,8 @@
   text-align: center;
   user-select: none;
   font-family: $futura;
+  letter-spacing: 0.1rem;
+
   h1,
   * {
     color: #fff;
@@ -23,6 +26,36 @@
     svg {
       fill: #fff;
       height: 3.5rem;
+    }
+  }
+  .tier-1,
+  .tier-2,
+  .tier-3 {
+  }
+  .tier-1 {
+    font-size: 7vw;
+    line-height: 160%;
+    @include grid-media-query(lap) {
+      //line-height: 110%;
+      line-height: 0;
+    }
+    @include grid-media-query(desk) {
+      line-height: 0;
+    }
+  }
+  .tier-2 {
+    font-size: 5vw;
+    line-height: 200%;
+  }
+  .tier-3 {
+    font-size: 3.5vw;
+  }
+  @include xxl-up {
+    .tier-1 {
+    }
+    .tier-2 {
+    }
+    .tier-3 {
     }
   }
 }
@@ -40,31 +73,17 @@ $lineup-width: 80%;
 $lineup-max-width: 90rem;
 
 #lineup-container {
-  width: $lineup-width;
-  max-width: $lineup-max-width;
+  // width: $lineup-width;
+  //max-width: $lineup-max-width;
   position: relative;
 }
 
 #lineup {
-  line-height: 125%;
+  white-space: nowrap;
   margin: 3rem 0 7rem;
   position: relative;
   width: 100%;
-  font-size: 6rem;
   &.auto-focus {
-    .blur,
-    .clear {
-      cursor: auto;
-    }
-    .blur {
-      opacity: 0;
-    }
-    .clear {
-      opacity: 1 !important;
-      clip-path: none !important;
-    }
-  }
-  @supports not (clip-path: circle(0)) {
     .blur,
     .clear {
       cursor: auto;
@@ -81,16 +100,13 @@ $lineup-max-width: 90rem;
 
 #lineup-noscript {
   margin-top: 8rem;
-  font-size: 3rem;
-  line-height: 125%;
-  letter-spacing: 0.1rem;
-  @include grid-media-query(lap-up) {
-    font-size: 4rem;
-  }
+  //font-size: 3rem;
+  //line-height: 125%;
+  // letter-spacing: 0.1rem;
 }
 
 .blur {
-  filter: blur(0.8rem);
+  filter: blur(0.9rem);
   opacity: 0.5;
 }
 
@@ -98,15 +114,16 @@ $lineup-max-width: 90rem;
 .clear {
   cursor: none;
   padding: 6vw;
+  // width: $lineup-width;
+  // max-width: $lineup-max-width;
 }
 
 .clear {
   clip-path: circle(0);
   transform: scale(1.05);
   top: 0;
+  left: 0;
   position: absolute;
-  width: $lineup-width;
-  max-width: $lineup-max-width;
 }
 
 .switch-grid {
@@ -115,14 +132,10 @@ $lineup-max-width: 90rem;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-$switch-border: 0.1rem;
-$switch-height: 2.4rem;
+$switch-border: 1px;
+$switch-height: 2.5rem;
 $switch-width: 7.2rem;
 #focus-switch-container {
-  @supports not (clip-path: circle(5vw)) {
-    display: none;
-  }
-
   font-family: $dejavu;
   // font-size: 1.9rem;
   letter-spacing: 0.2rem;

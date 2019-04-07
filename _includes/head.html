@@ -1,7 +1,11 @@
 <head>
   <!-- Meta tags -->
   <meta charset="utf-8" />
+  {% if jekyll.environment == "development" %}
+  <base href="/" />
+  {% else %}
   <base href="{{ site.base }}" />
+  {% endif %}
 
   <meta
     name="viewport"
@@ -70,7 +74,9 @@
   <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
 
   <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+  <script src="assets/scripts/vendor/jquery.min.js"></script>
 
   <title>
     {% if page.title == "Home" %}

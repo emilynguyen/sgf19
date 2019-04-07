@@ -4,6 +4,8 @@ title: Home
 permalink: /
 ---
 
+<div id="measure"></div>
+
 <div id="landing-block">
   <div id="countdown-container">
     <div id="countdown-wrapper">
@@ -62,20 +64,41 @@ permalink: /
     <h1 class="underline-white">Lineup</h1>
     <div id="lineup" class="portable-hide">
       <div class="blur lineup-text">
-        {% for artist in site.data.lineup %}
-        {{ artist.name }}{% if forloop.last == false %}<br />{% endif %}{%
-        endfor %}
+        <span class="tier-1"> {{ site.data.lineup[0].name }}<br /> </span>
+        <span class="tier-2">
+          <span>{{ site.data.lineup[1].name }}</span
+          >&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ site.data.lineup[2].name }}</span
+          ><br />
+        </span>
+        <span class="tier-3">
+          <span>{{ site.data.lineup[3].name }}</span
+          >&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ site.data.lineup[4].name }}</span>
+        </span>
       </div>
       <div class="clear lineup-text">
-        {% for artist in site.data.lineup %}
-        {{ artist.name }}{% if forloop.last == false %}<br />{% endif %}{%
-        endfor %}
+        <span class="tier-1"> {{ site.data.lineup[0].name }}<br /> </span>
+        <span class="tier-2">
+          <span>{{ site.data.lineup[1].name }}</span
+          >&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ site.data.lineup[2].name }}</span
+          ><br />
+        </span>
+        <span class="tier-3">
+          <span>{{ site.data.lineup[3].name }}</span
+          >&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ site.data.lineup[4].name }}</span>
+        </span>
       </div>
     </div>
     <div id="lineup-noscript" class="desk-hide">
-      {% for artist in site.data.lineup %}
-      {{ artist.name }}{% if forloop.last == false %}<br />{% endif %}{% endfor
-      %}
+      <span class="tier-1"> {{ site.data.lineup[0].name }}<br /> </span>
+      <span class="tier-2">
+        <span>{{ site.data.lineup[1].name }}</span
+        >&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ site.data.lineup[2].name }}</span
+        ><br />
+      </span>
+      <span class="tier-3">
+        <span>{{ site.data.lineup[3].name }}</span
+        >&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ site.data.lineup[4].name }}</span>
+      </span>
     </div>
 
     <div class="grid portable-hide">
@@ -246,6 +269,7 @@ permalink: /
 
 <!--
 <script src="assets/scripts/vendor/mgGlitch.min.js"></script>
+
 <script>
   $("#glitch").mgGlitch({
     // set 'true' to stop the plugin
@@ -276,19 +300,6 @@ permalink: /
   });
 </script>
 -->
-<!--
-<script src="assets/scripts/vendor/glitch.jquery.js"></script>
-<script>
-  $("#sun-god").glitch({
-    bg: "black",
-    minint: 1,
-    maxint: 3,
-    maxglitch: 15,
-    hoffset: 10,
-    voffset: 3,
-    direction: "random"
-  });
-</script> -->
 
 <script>
   var is_opera = !!window.opera || navigator.userAgent.indexOf(" OPR/") >= 0;

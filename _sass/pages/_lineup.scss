@@ -1,0 +1,62 @@
+.artist {
+  &:not(:last-child) {
+    margin-bottom: $spacer-xs;
+    @include grid-media-query(lap-up) {
+      margin-bottom: $spacer;
+    }
+  }
+  &-photo-container {
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    height: 12rem;
+    width: 100%;
+    //height: 26vw;
+    @include grid-media-query(lap-up) {
+      // height: 30rem;
+      height: 26vw;
+    }
+    @include grid-media-query(desk) {
+      //height: 40rem;
+
+      max-height: 45rem;
+    }
+  }
+  &-photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $black1;
+  }
+  &-info {
+    display: none;
+    padding: 3rem 0;
+    @include grid-media-query(tablet-up) {
+      padding: $spacer 0;
+      p {
+        padding: 0 10%;
+      }
+    }
+    .btn {
+      margin: initial 1rem !important;
+    }
+  }
+}
+
+p.lineup-tip {
+  font-family: $dejavu;
+  font-size: 60%;
+  color: $gray;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  margin-bottom: 4rem !important;
+  margin-top: -4rem;
+}

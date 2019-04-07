@@ -13,12 +13,14 @@
 @import "base/base", "base/fonts", "base/typography", "base/helpers";
 
 // Layouts
-@import "layout/header", "layout/side-nav", "layout/footer";
+@import "layout/header", "layout/side-nav", "layout/sub", "layout/footer";
 
 // Components
 @import "components/button", "components/drawers";
 
-// Section-specific styles
+// Home-specific styles
 @import "sections/landing", "sections/lineup", "sections/about",
-  "sections/safety", "sections/volunteer", "sections/sub", "sections/sponsor",
-  "sections/404";
+  "sections/safety", "sections/volunteer", "sections/sponsor";
+
+// Page-specific styles
+@import "pages/lineup", "pages/404";

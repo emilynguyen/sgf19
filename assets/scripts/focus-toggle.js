@@ -1,3 +1,6 @@
+---
+---
+
 /* AF/MF toggle */
 var $switch = $("#focus-switch-container input");
 var $switchLabel = $("#focus-switch-container .switch");

@@ -1,15 +1,24 @@
 #safety-block {
   // @extend .block;
   //min-height: 80vh;
-  margin: 13rem 0 6rem;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  margin: 12rem 0 10rem;
+  //height: 100vh;
+  @include grid-media-query(lap-up) {
+    margin: 20rem 0 12rem;
+  }
   img {
     // /height: 25vw;
-    width: 90%;
+    //height: 50vh;
+    width: 65vw;
+    max-width: 100rem;
+    @include grid-media-query(lap-up) {
+      width: 50vw;
+    }
   }
 }
 

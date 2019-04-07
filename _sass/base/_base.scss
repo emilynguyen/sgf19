@@ -13,20 +13,19 @@ body {
   @include grid-media-query(portable) {
     width: $content-width-palm;
     margin-bottom: $border-palm;
-    //margin-top: $border-palm;
   }
 }
 
 .block {
   height: 100vh;
-  min-height: 80rem;
+  @include grid-media-query(lap-up) {
+    min-height: 80rem;
+  }
 }
 
 .content {
-  //width: 65%;
   width: 60vw;
   @include grid-media-query(portable) {
-    // width: 80%;
     width: 70vw;
   }
 }
@@ -45,7 +44,6 @@ body {
 }
 
 #tips {
-  //font-family: $dejavu;
   font-family: $futura;
   letter-spacing: 0.02rem;
   line-height: 130%;
@@ -123,7 +121,6 @@ body {
       top: 0;
       left: 0;
       border-color: white transparent transparent transparent;
-
       border-width: $diagonal-height $content-width 0 0;
       @include grid-media-query(portable) {
         border-width: $diagonal-height-palm $content-width-palm 0 0;

@@ -1,45 +1,53 @@
+---
+---
+
 var PREV_TRANSLATE = 0;
+var BORDER_HEIGHT = parseFloat($('#content').css('margin-bottom'));
+
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+$(document).ready(function() {
+  // Adjust landing border on iOS
+  if (iOS) {
+    var visibleHeight = window.innerHeight;
+    var newLandingHeight = visibleHeight - BORDER_HEIGHT * 2;
+    document.getElementById("landing-block").style.height =
+      newLandingHeight + "px";
+  }
+});
+
+$(window).resize(function() {
+  BORDER_HEIGHT = parseFloat($('#content').css('margin-bottom'));
+});
 
 $(window).scroll(function(event) {
   /* Toggle border content color */
   var scroll = $(window).scrollTop();
 
   var $footer = $("#landing-block .footer");
-  if (scroll <= 1 && $footer.hasClass("white")) {
+  if (scroll <= 0 && $footer.hasClass("white")) {
     $footer.removeClass("white");
-  } else if (scroll > 1 && !$footer.hasClass("white")) {
+  } else if (scroll > 0 && !$footer.hasClass("white")) {
     $footer.addClass("white");
   }
 
-  /* Translate white border  */
+  /* Translate white border */
+  var distance = 200;
+
   var $border = $("#landing-border");
-  var borderHeight = $border.height();
+  var landingBorderHeight = $border.height();
 
-  var start = 0,
-    end = borderHeight;
-  var translate = 0 + $(window).scrollTop() * 1.5;
+  var end = $(window).height();
 
-  // Check border position
-  var borderRect = $border[0].getBoundingClientRect();
-  var borderTop = borderRect.top;
+  var translate;
 
-  // Check if translate puts border out of view
-  var vh = Math.max(
-    document.documentElement.clientHeight,
-    window.innerHeight || 0
-  );
-
-  var pseudoTop = vh - $border.height() + PREV_TRANSLATE - scroll;
-
-  if (translate < 0) translate = 0;
-
-  // Only translate if still in view
-  if (pseudoTop < vh) {
-    $border.show();
-    $border.css("transform", `translateY(${translate}px)`);
-  } else {
-    $border.hide();
+  if (scroll <= 0) {
+    translate = 0;
+  } else if (scroll > 0 && scroll <= end) {
+    translate = scroll * 1.5;
+  } else if (scroll > end) {
+    translate = scroll + landingBorderHeight;
   }
 
-  PREV_TRANSLATE = translate;
+  $border.css("transform", "translateY(" + translate + "px)");
 });

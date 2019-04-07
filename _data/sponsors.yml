@@ -13,9 +13,9 @@
 - name: La Croix
   link: https://www.lacroixwater.com/
   img: la-croix.png
-- name: FM949
-  link: https://alt949.radio.com/
-  img: fm949.png
+#- name: FM949
+#  link: https://alt949.radio.com/
+#  img: fm949.png
 - name: ZipCar
   link: https://www.zipcar.com/
   img: zipcar.png

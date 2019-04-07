@@ -9,7 +9,8 @@
   white-space: nowrap;
   padding: 0.6rem 1.3rem 0.4rem !important;
   @include grid-media-query(lap-up) {
+    border-width: 0.1rem;
     font-size: 1.4rem;
-    padding: 1rem 2rem 0.8rem !important;
+    padding: 1rem 2rem 1rem;
   }
 }

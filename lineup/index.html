@@ -7,6 +7,105 @@ permalink: /lineup/
 <div class="grid">
   <div class="grid__item grid--center">
     <h1 class="underline-dark">Lineup</h1>
-    <h2>Coming Soon</h2>
+    <p class="tablet-up-hide lineup-tip">Click for more info</p>
+    {% for artist in site.data.lineup %}
+    <div class="artist" data-open="false">
+      <div class="artist-photo-container">
+        <div
+          class="artist-photo"
+          style="background-image: url({{ artist.photo }});"
+        ></div>
+      </div>
+      <div class="artist-info">
+        <h2>{{ artist.name }}</h2>
+        <p>{{ artist.bio }}</p>
+        <p>
+          <a
+            class="btn"
+            href="{{ artist.link }}"
+            target="_blank"
+            title="{{ artist.link }}"
+            >Website</a
+          >
+        </p>
+      </div>
+    </div>
+    {% endfor %}
   </div>
 </div>
+
+<script src="assets/scripts/vendor/mgGlitch.min.js"></script>
+
+<script>
+  $(".artist-photo").mgGlitch({
+    // set 'true' to stop the plugin
+    destroy: true,
+
+    // set 'false' to stop glitching
+    glitch: true,
+
+    // set 'false' to stop scaling
+    scale: true,
+
+    // set 'false' to stop glitch blending
+    blend: true,
+
+    // select blend mode type
+    blendModeType: "hue",
+
+    glitch1TimeMin: 200,
+    // set max time for glitch 1 elem
+    glitch1TimeMax: 400,
+    // set min time for glitch 2 elem
+    glitch2TimeMin: 10,
+    // set max time for glitch 2 elem
+    glitch2TimeMax: 100,
+
+    // z-index
+    zIndexStart: 1
+  });
+
+  $(".artist").hover(
+    function() {
+      $(this)
+        .find(".artist-photo")
+        .mgGlitch({ destroy: false });
+    },
+    function() {
+      $(this)
+        .find(".artist-photo")
+        .mgGlitch({ destroy: true });
+    }
+  );
+
+  $(".artist").click(function() {
+    var open = $(this).attr("data-open");
+    if (open === "true") {
+      open = true;
+    } else if (open === "false") {
+      open = false;
+    }
+    console.log(open);
+    // Close if drawer is open
+    if (open) {
+      $(this)
+        .find(".artist-photo")
+        .mgGlitch({ destroy: true });
+      $(this)
+        .find(".artist-info")
+        .slideUp();
+      $(this).attr("data-open", false);
+    }
+    // Open if drawer is closed
+    else {
+      $(this)
+        .find(".artist-photo")
+        .mgGlitch({ destroy: false });
+      $(this)
+        .find(".artist-info")
+        .slideDown();
+
+      $(this).attr("data-open", true);
+    }
+  });
+</script>

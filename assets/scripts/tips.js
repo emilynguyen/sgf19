@@ -1,5 +1,8 @@
+---
+---
+
 /* Global variables */
-var TIPS = [
+const TIPS = [
   "Do NOT mix drugs and alcohol.",
   "Make sure to remain hydrated and drink about two cups of water (500ml) every hour. Be careful to not consume water too quickly- this can cause an electrolyte imbalance that could become fatal.",
   "You WILL NOT be punished for your drug/alcohol use retroactively if you seek help from an official. Your safety is our first priority.",

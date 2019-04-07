@@ -1,3 +1,6 @@
+---
+---
+
 function disableAF() {
   $("#lineup-container .portable-hide")
     .removeClass("portable-hide")
@@ -14,7 +17,6 @@ $(document).ready(function() {
   var top, left, lens, blur, clear, bg;
 
   bg = $("#lineup");
-
   lens = $("#lens");
   blur = $(".blur");
   clear = $(".clear");
@@ -25,7 +27,7 @@ $(document).ready(function() {
       return;
     }
     clear.css({
-      "clip-path": "circle(5vw at " + e.offsetX + "px " + e.offsetY + "px)",
+      "clip-path": "circle(7vw at " + e.offsetX + "px " + e.offsetY + "px)",
       opacity: "1"
     });
   });

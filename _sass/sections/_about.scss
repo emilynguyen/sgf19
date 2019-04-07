@@ -11,14 +11,13 @@
   height: auto;
   display: flex;
   justify-content: center;
-  //min-height: 110vh;
   @include grid-media-query(palm) {
     min-height: 80vh;
   }
   @include grid-media-query(desk) {
-    //min-height: none;
     height: 110vh;
-    max-height: 80rem;
+    height: 100%;
+    max-height: 90rem;
   }
   .sidebar {
     left: 0;
@@ -115,29 +114,7 @@ $blob-ratio: 1.069;
     @include grid-media-query(portable) {
       text-align: center;
     }
-  } /*
-  &::after {
-    content: "";
-    position: absolute;
-    background-image: url("../images/home/about/blob.png");
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    $blob-width: 25rem;
-    $blob-height: $blob-width / $blob-ratio;
-    right: -$blob-width / 3;
-    top: -$blob-height/1.1;
-    width: $blob-width;
-    height: $blob-height;
-    @include grid-media-query(portable) {
-      $blob-width: 10rem;
-      $blob-height: $blob-width / $blob-ratio;
-      right: 2rem;
-      top: -3rem;
-      width: $blob-width;
-      height: $blob-height;
-    }
-  } */
+  }
   .about-grid {
     display: grid;
     grid-template-columns: 3rem 1fr;
@@ -149,7 +126,7 @@ $blob-ratio: 1.069;
       margin-top: 8rem;
     }
     @include grid-media-query(lap) {
-      grid-template-columns: 14vw 1fr;
+      grid-template-columns: 8rem 1fr;
     }
     @include grid-media-query(desk) {
       grid-template-columns: auto 18rem auto;
@@ -181,7 +158,19 @@ $blob-ratio: 1.069;
       padding: 0;
       padding-top: 1rem;
     }
-    margin-top: -0.7rem;
+    margin-top: -2.3rem;
+    @include grid-media-query(lap) {
+      p {
+        padding-top: 1.8rem;
+      }
+      margin-top: -0.8rem;
+    }
+    @include grid-media-query(desk) {
+      p {
+        padding-top: 1.8rem;
+      }
+      margin-top: -1.5rem;
+    }
     height: 0;
     overflow: hidden;
     z-index: 999;

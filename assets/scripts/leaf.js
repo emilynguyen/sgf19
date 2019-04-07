@@ -1,3 +1,6 @@
+---
+---
+
 var $LEAF_STRETCH = $(".leaf-stretch");
 var $TEXT_CONTAINER = $("#about .text-container");
 var $TEXT = $("#about .text");
