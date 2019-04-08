@@ -1,26 +1,24 @@
----
----
+'use strict';
 
 var PREV_TRANSLATE = 0;
 var BORDER_HEIGHT = parseFloat($('#content').css('margin-bottom'));
 
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-$(document).ready(function() {
+$(document).ready(function () {
   // Adjust landing border on iOS
   if (iOS) {
     var visibleHeight = window.innerHeight;
     var newLandingHeight = visibleHeight - BORDER_HEIGHT * 2;
-    document.getElementById("landing-block").style.height =
-      newLandingHeight + "px";
+    document.getElementById("landing-block").style.height = newLandingHeight + "px";
   }
 });
 
-$(window).resize(function() {
+$(window).resize(function () {
   BORDER_HEIGHT = parseFloat($('#content').css('margin-bottom'));
 });
 
-$(window).scroll(function(event) {
+$(window).scroll(function (event) {
   /* Toggle border content color */
   var scroll = $(window).scrollTop();
 
@@ -45,15 +43,12 @@ $(window).scroll(function(event) {
     $border.show();
     translate = 0;
     $border.css("transform", "translateY(" + translate + "px)");
-
   } else if (scroll > 0 && scroll <= end) {
     $border.show();
     translate = scroll * 1.5;
     $border.css("transform", "translateY(" + translate + "px)");
-
   } else if (scroll > end) {
     $border.hide();
-   // translate = scroll + landingBorderHeight;
+    // translate = scroll + landingBorderHeight;
   }
-
 });

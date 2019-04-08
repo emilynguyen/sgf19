@@ -2,7 +2,7 @@ title: Sun God Festival 2019
 email: asce@ucsd.edu
 description: 04.27.2019 | 12PM – 6PM | RIMAC
 baseurl: "" # the subpath of your site, e.g. /blog
-base: "/sgf19/"
+base: "/"
 url: "http://sgf.ucsd.edu" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: emilynguyen
 

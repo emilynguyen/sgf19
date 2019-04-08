@@ -4,7 +4,7 @@
   letter-spacing: 0.2rem;
   display: inline-block;
   font-size: 1.2rem;
-  color: $red;
+  color: $red !important;
   border: 1px solid $red;
   white-space: nowrap;
   padding: 0.6rem 1.3rem 0.4rem !important;
@@ -13,4 +13,9 @@
     font-size: 1.4rem;
     padding: 1rem 2rem 1rem;
   }
+}
+
+.btn-on-dark {
+  color: $red2 !important;
+  border: 1px solid $red2;
 }
