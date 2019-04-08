@@ -37,6 +37,14 @@ permalink: /lineup/
 <script src="assets/scripts/vendor/mgGlitch.min.js"></script>
 
 <script>
+  var TOUCH = false;
+
+  if ("ontouchstart" in document.documentElement) {
+    TOUCH = true;
+  } else {
+    TOUCH = false;
+  }
+
   $(".artist-photo").mgGlitch({
     // set 'true' to stop the plugin
     destroy: true,
@@ -65,18 +73,20 @@ permalink: /lineup/
     zIndexStart: 1
   });
 
-  $(".artist").hover(
-    function() {
-      $(this)
-        .find(".artist-photo")
-        .mgGlitch({ destroy: false });
-    },
-    function() {
-      $(this)
-        .find(".artist-photo")
-        .mgGlitch({ destroy: true });
-    }
-  );
+  if (!TOUCH) {
+    $(".artist").hover(
+      function() {
+        $(this)
+          .find(".artist-photo")
+          .mgGlitch({ destroy: false });
+      },
+      function() {
+        $(this)
+          .find(".artist-photo")
+          .mgGlitch({ destroy: true });
+      }
+    );
+  }
 
   $(".artist").click(function() {
     var open = $(this).attr("data-open");

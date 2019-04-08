@@ -1,6 +1,8 @@
 ---
 ---
 
+var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+
 function disableAF() {
   $("#lineup-container .portable-hide")
     .removeClass("portable-hide")
@@ -21,18 +23,24 @@ $(document).ready(function() {
   blur = $(".blur");
   clear = $(".clear");
 
-  $(".lineup-text").mousemove(function(e) {
+  $("#lineup-input").mousemove(function(e) {
     // Only run if manual focus is on
     if (bg.hasClass("auto-focus")) {
       return;
     }
+
+    var moveX = e.offsetX;
+    var moveY = e.offsetY;
+
     clear.css({
-      "clip-path": "circle(7vw at " + e.offsetX + "px " + e.offsetY + "px)",
+      "clip-path": "circle(6vw at " + moveX + "px " + moveY + "px)",
       opacity: "1"
     });
   });
 
-  $(".lineup-text").mouseleave(function(e) {
+  $("#lineup-input").mouseleave(function(e) {
+    console.log("leave: " + e.target);
+
     // Only run if manual focus is on
     if (bg.hasClass("auto-focus")) {
       return;
