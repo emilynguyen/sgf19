@@ -72,13 +72,13 @@ $lineup-width: 80%;
 $lineup-max-width: 90rem;
 
 #lineup-container {
-  margin-top: -5rem;
+  margin-top: -4rem;
   position: relative;
 }
 
 #lineup {
   white-space: nowrap;
-  margin: 3rem 0 6rem;
+  //margin: 3rem 0 6rem;
   position: relative;
   width: 100%;
   &.auto-focus {
@@ -94,15 +94,22 @@ $lineup-max-width: 90rem;
       clip-path: none !important;
     }
   }
+  img {
+    height: 40vh;
+    max-height: auto;
+  }
+}
+
+#lineup-controls {
+  padding-top: 2rem;
 }
 
 #lineup-noscript {
-  margin-top: 13rem;
-  .btn {
-    margin-top: 5rem;
-    @include grid-media-query(lap-up) {
-      margin-top: 5rem;
-    }
+  margin-top: 6rem;
+
+  img {
+    width: 50vw;
+    max-width: 30rem;
   }
 }
 
@@ -113,6 +120,7 @@ $lineup-max-width: 90rem;
   width: 100%;
   height: 100%;
   z-index: 9998;
+  cursor: none;
 }
 
 .blur {
@@ -127,7 +135,7 @@ $lineup-max-width: 90rem;
 .clear {
   cursor: none;
   // padding: 6vw;
-  padding: 10vw 7vw 7vw;
+  padding: 6vw 6vw 5vw;
 }
 
 .clear {

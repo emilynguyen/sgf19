@@ -30,9 +30,13 @@ $(document).ready(function () {
     var moveY = e.offsetY;
 
     clear.css({
-      "clip-path": "circle(6vw at " + moveX + "px " + moveY + "px)",
+      "clip-path": "circle(5.5vw at " + moveX + "px " + moveY + "px)",
       opacity: "1"
     });
+  });
+
+  $("#lineup-controls").mousemove(function (e) {
+    e.stopPropagation();
   });
 
   $("#lineup-input").mouseleave(function (e) {

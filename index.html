@@ -64,65 +64,50 @@ permalink: /
     <h1 class="underline-white">Lineup</h1>
     <div id="lineup" class="portable-hide">
       <div id="lineup-input"></div>
-      <div class="blur lineup-text">
-        <span class="tier-1"> {{ site.data.lineup[0].name }}<br /> </span>
-        <span class="tier-2">
-          <span>{{ site.data.lineup[1].name }}</span
-          >&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ site.data.lineup[2].name }}</span
-          ><br />
-        </span>
-        <span class="tier-3">
-          <span>{{ site.data.lineup[3].name }}</span
-          >&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ site.data.lineup[4].name }}</span>
-        </span>
+      <div class="blur">
+        <img
+          src="assets/images/home/lineup/lineup.svg"
+          alt="Vince Staples, Joji, Hayley Kiyoko, WHIPPED CREAM, Hunny"
+        />
       </div>
-      <div class="clear lineup-text">
-        <span class="tier-1"> {{ site.data.lineup[0].name }}<br /> </span>
-        <span class="tier-2">
-          <span>{{ site.data.lineup[1].name }}</span
-          >&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ site.data.lineup[2].name }}</span
-          ><br />
-        </span>
-        <span class="tier-3">
-          <span>{{ site.data.lineup[3].name }}</span
-          >&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ site.data.lineup[4].name }}</span>
-        </span>
+      <div class="clear">
+        <img
+          src="assets/images/home/lineup/lineup.svg"
+          alt="Vince Staples, Joji, Hayley Kiyoko, WHIPPED CREAM, Hunny"
+        />
       </div>
     </div>
     <div id="lineup-noscript" class="desk-hide">
       <div class="mb">
-        <span class="tier-1"> {{ site.data.lineup[0].name }}<br /> </span>
-        <span class="tier-2">
-          <span>{{ site.data.lineup[1].name }}</span
-          >&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ site.data.lineup[2].name }}</span
-          ><br />
-        </span>
-        <span class="tier-3">
-          <span>{{ site.data.lineup[3].name }}</span
-          >&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ site.data.lineup[4].name }}</span>
-        </span>
+        <img
+          src="assets/images/home/lineup/lineup.svg"
+          alt="Vince Staples, Joji, Hayley Kiyoko, WHIPPED CREAM, Hunny"
+        />
       </div>
       <a href="lineup" class="btn lighten">Learn More</a>
     </div>
 
     <div class="grid portable-hide">
-      <div class="grid__item one-third"></div>
-      <div class="grid__item one-third asce-logo">
-        <!--
-        <a href="http://asce.ucsd.edu" target="_blank"
-          >{% include asce-logo.html %}</a
-        >
-        -->
-        <a href="lineup" class="btn lighten">Learn More</a>
+      <div id="lineup-controls">
+        <div class="grid__item one-third"></div>
+        <div class="grid__item one-third asce-logo">
+          <!--
+          <a href="http://asce.ucsd.edu" target="_blank"
+            >{% include asce-logo.html %}</a
+          >
+          -->
+          <a href="lineup" class="btn lighten">Learn More</a>
+        </div>
+        <div id="focus-switch-container" class="grid__item one-third">
+          <label class="switch lighten">
+            <input type="checkbox" />
+            <span class="knob"></span>
+          </label>
+        </div>
       </div>
-      <div id="focus-switch-container" class="grid__item one-third">
-        <label class="switch lighten">
-          <input type="checkbox" />
-          <span class="knob"></span>
-        </label>
-      </div>
+
+      <div id="lens"></div>
     </div>
-    <div id="lens"></div>
   </div>
 </div>
 
