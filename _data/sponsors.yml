@@ -46,3 +46,12 @@
 - name: TO
   link: https://to.ucsd.edu
   img: to.png
+- name: Bos Tea
+  link: https://www.bosbrands.com/en/
+  img: bos.png
+- name: Cal Coast Credit Union
+  link: https://www.calcoastcu.org/
+  img: cccu.png
+- name: Glico
+  link: https://www.glico.com/global/
+  img: glico.png
