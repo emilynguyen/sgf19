@@ -73,11 +73,16 @@
   p {
     max-width: 65%;
     @include grid-media-query(lap-up) {
-      max-width: 60%;
+      width: 60%;
+      max-width: 50rem;
+    }
+    @include xxl-up {
+      max-width: 60rem;
     }
   }
 
   .flamingo-container {
+    max-width: 100rem;
     position: relative;
     .leaf {
       position: absolute;
@@ -109,6 +114,19 @@
       }
       .leaf-bottom {
         bottom: -10.5vw;
+      }
+    }
+    @include xxl-up {
+      .leaf {
+        width: 45rem;
+      }
+      .leaf-top {
+        top: -25rem;
+        right: -35rem;
+      }
+      .leaf-bottom {
+        bottom: -35rem;
+        left: -30rem;
       }
     }
   }

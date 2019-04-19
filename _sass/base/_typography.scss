@@ -108,6 +108,20 @@ a {
   }
 }
 
+nav {
+  a:not(.btn) {
+    transition: opacity 0.1s;
+    @include hover {
+      opacity: 0.4;
+      filter: none;
+    }
+    &.active {
+      opacity: 0.4;
+      filter: none;
+    }
+  }
+}
+
 i {
   font-style: italic;
 }

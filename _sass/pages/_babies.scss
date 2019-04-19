@@ -1,0 +1,41 @@
+#babies-instructions {
+  background-color: $blue;
+  padding: 3rem 2rem 2rem;
+  @include grid-media-query(lap) {
+    padding: 10%;
+    h2 {
+      padding: 0 5%;
+    }
+    p {
+      padding: 0 5%;
+    }
+  }
+  @include grid-media-query(desk) {
+    padding: $spacer-md $spacer;
+    h2 {
+      padding: 0 25%;
+    }
+    p {
+      padding: 0 20%;
+    }
+  }
+}
+
+.babies-img {
+  max-width: 70rem;
+  margin: 2rem 0;
+  @include grid-media-query(lap-up) {
+    margin: 4rem 0;
+  }
+}
+
+.instructions-palm {
+  margin: 1.5rem 0 0 0;
+  @include grid-media-query(lap) {
+    max-width: 40rem;
+  }
+}
+
+.instructions-desk {
+  margin: 8rem 0 0 0;
+}

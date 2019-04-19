@@ -17,7 +17,7 @@
       url: transportation
     - title: ADA Info
       url: ada
-    - title: Volunteers
+    - title: Volunteer
       url: volunteer
     - title: Sun God For A Cause
       url: for-a-cause
@@ -25,6 +25,8 @@
       url: sgfbabies
     - title: FAQ
       url: faq
+    - title: Our Process
+      url: process
 - title: Safety
   url: safety
 - title: Sponsors
