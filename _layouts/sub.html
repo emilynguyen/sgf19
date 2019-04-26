@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div id="sub-page">
+<div id="sub-page" {% if page.fullWidth == true %}class="full-width"{% endif %}>
   <div id="sub-page-content">
     {{ content }}
   </div>

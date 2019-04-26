@@ -1,0 +1,29 @@
+#map-block {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 10rem 0 10rem;
+  @include grid-media-query(lap-up) {
+    margin: 12rem 0 14rem;
+  }
+  img {
+    width: 100%;
+    @include grid-media-query(lap-up) {
+      width: 50vw;
+    }
+    @include grid-media-query(desk) {
+      width: 65vw;
+    }
+  }
+  a {
+    @include hover {
+      filter: none;
+    }
+  }
+}
+
+#map {
+  width: 100%;
+}

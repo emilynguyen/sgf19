@@ -17,7 +17,9 @@ permalink: /attractions-and-vendors/
     </section>
     <section>
       <h2>Food Vendors</h2>
-      <p>COMING SOON</p>
+      {% for vendor in site.data.vendors.vendors %}
+      <p>{{ vendor }}</p>
+      {% endfor %}
     </section>
   </div>
 </div>

@@ -1,5 +1,8 @@
 #sub-page {
   padding: 0 3vw;
+  &.full-width {
+    padding: 0;
+  }
   margin: $spacer 0;
   @include grid-media-query(lap-up) {
     padding: 0 6vw;
@@ -7,7 +10,10 @@
   }
   h1 {
     text-align: center;
-    margin-bottom: $spacer-md;
+    margin-bottom: $spacer;
+    @include grid-media-query(lap-up) {
+      margin-bottom: $spacer-md;
+    }
   }
 
   h2,

@@ -79,10 +79,25 @@ header nav {
       margin-right: $spacer-xs;
     }
   }
+  ul.registration-active {
+    li:not(:nth-last-child(2)) {
+      margin-right: $gap;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: calc(-#{$gap} / 2);
+        width: 1px;
+        height: 1.5rem;
+        background-color: $gray;
+        display: inline-block;
+      }
+    }
+  }
   li {
     display: inline-block;
     position: relative;
-    &:not(:last-child):not(:nth-last-child(2)) {
+    &:not(:last-child) {
       margin-right: $gap;
       &::after {
         content: "";

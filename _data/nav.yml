@@ -9,6 +9,8 @@
       url: about
     - title: Registration
       url: registration
+    - title: Map
+      url: map
     - title: Attractions + Vendors
       url: attractions-and-vendors
     - title: Apparel
